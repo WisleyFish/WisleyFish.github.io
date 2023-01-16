@@ -1,0 +1,46 @@
+﻿﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Grayscale Image B</title>
+    <style>
+        #form {
+            margin: 20px;
+        }
+
+        #canvas {
+            margin: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <label>Enter image URL1:</label>
+        <input type="text" id="image-url" placeholder="Enter image URL">
+        <input type="submit" value="Submit">
+    </form>
+
+    <img id="image" style="visibility:hidden">
+
+    <script>
+        var form = document.getElementById("form");
+        var imageUrl = document.getElementById("image-url");
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // prevent form submission
+            var img = new Image();
+            img.src = imageUrl.value;
+            img.onload = function() {
+                var image = document.getElementById("image");
+                image.src = img.src;
+                image.style.visibility = "visible";
+            }
+            img.onerror = function() {
+                alert("Error: Failed to load image.");
+            }
+        });
+    </script>
+</body>
+</html>
