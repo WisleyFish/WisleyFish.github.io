@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI 計算器</title>
+  <script>
+    var bmi;
+    function calculateBMI() {
+      // 取得輸入值
+      var weight = document.getElementById("weight").value;
+      var height = document.getElementById("height").value;
+
+      // 計算 BMI
+      bmi = weight / (height * height);
+
+      // 顯示結果
+      document.getElementById("result").innerHTML = bmi;
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="weight">體重(公斤):</label>
+    <input type="text" id="weight">
+    <br>
+    <label for="height">身高(公尺):</label>
+    <input type="text" id="height">
+    <br>
+    <button onclick="calculateBMI()">計算</button>
+  </form>
+  <p>BMI: <span id="result"></span></p>
+</body>
+</html>
