@@ -4,13 +4,14 @@
 
 <h1>我的 Web 頁面</h1>
 
-<p>段落。</p>
+<p id="demo">段落。</p>
 
 <button onclick="myFunction()">點我</button>
 
 <script>
 function myFunction() {
-    document.write(Date());
+    //document.write(Date());
+    document.getElementById("demo").innerHTML = Date();
 }
 </script>
 
