@@ -15,7 +15,7 @@
 </head>
 <body>
     <form id="form">
-        <label>Enter image URL6:</label>
+        <label>Enter image URL7:</label>
         <input type="text" id="image-url" placeholder="Enter image URL">
         <input type="submit" value="Submit">
     </form>
@@ -34,7 +34,7 @@
             img.src = imageUrl.value;
             alert(img.src);
             img.onload = function() {
-                alert("width:"& img.width & ", height:" & img.height);
+                alert("width:" + img.width + ", height:" + img.height);
                 //canvas.drawImage(img, x, y, width, height);
                 canvas.drawImage(img, 0, 0, 30, 30, 0,0,30,30);
                 canvas.style.visibility = "visible";
