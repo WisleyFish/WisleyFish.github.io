@@ -47,6 +47,9 @@
                 ctx.putImageData(imgData, 0, 0);
                 canvas.style.visibility = "visible";
             }
+            img.onerror = function() {
+                alert("Error: Failed to load image.");
+            }
         });
     </script>
 </body>
