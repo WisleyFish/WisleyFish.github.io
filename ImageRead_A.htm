@@ -15,7 +15,7 @@
 </head>
 <body>
     <form id="form">
-        <label>Enter image URL3:</label>
+        <label>Enter image URL4:</label>
         <input type="text" id="image-url" placeholder="Enter image URL">
         <input type="submit" value="Submit">
     </form>
@@ -33,6 +33,9 @@
             var img = new Image();
             img.src = imageUrl.value;
             img.onload = function() {
+                //canvas.drawImage(img, x, y, width, height);
+                canvas.drawImage(img, 100, 100, 300, 300);
+                /*
                 alert("Start!");
                 canvas.width = img.width;
                 canvas.height = img.height;
@@ -48,6 +51,7 @@
                 ctx.putImageData(imgData, 0, 0);
                 canvas.style.visibility = "visible";
                 alert("Complete!");
+                */
             }
             img.onerror = function() {
                 alert("Error: Failed to load image.");
