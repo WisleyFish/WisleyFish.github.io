@@ -33,6 +33,7 @@
             var img = new Image();
             img.src = imageUrl.value;
             img.onload = function() {
+                alert("Start!");
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
