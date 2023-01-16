@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI 計算器</title>
+  <script>
+    function calculateBMI() {
+      // 取得輸入值
+      var weight = document.getElementById("weight").value;
+      var height = document.getElementById("height").value;
+
+      // 計算 BMI
+      var bmi = weight / (height * height);
+      
+      //儲存 BMI
+      localStorage.setItem("bmi",bmi);
+
+      // 顯示結果
+      document.getElementById("result").innerHTML = bmi;
+    }
+    // 在頁面載入時, 檢查是否有已存的 bmi
+    if (localStorage.getItem("bmi")) {
+      document.getElementById("result").innerHTML = localStorage.getItem("bmi");
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="weight">體重(公斤):</label>
+    <input type="text" id="weight">
+    <br>
+    <label for="height">身高(公尺):</label>
+    <input type="text" id="height">
+    <br>
+    <button onclick="calculateBMI()">計算</button>
+  </form>
+  <p>BMI: <span id="result"></span></p>
+</body>
+</html>
